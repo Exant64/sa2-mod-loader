@@ -2,6 +2,7 @@
 #include "SA2ModLoader.h"
 #include "UsercallFunctionHandler.h"
 #include "patches.h"
+#include "PaletteFix.h"
 
 #pragma region Car Fix
 static const void* const loc_5E3D90 = (void*)0x5E3D90;
@@ -197,4 +198,6 @@ void ApplyPatches(LoaderSettings* loaderSettings)
 		WriteCall((void*)0x491B90, ParticleGXEnd);
 		WriteCall((void*)0x4917EE, ParticleGXEnd);
 	}
+
+	PaletteFix_Init();
 }
